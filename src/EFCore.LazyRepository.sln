@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.LazyRepository", "EFCore.LazyRepository\EFCore.LazyRepository.csproj", "{0E4F2FB2-4B63-4A11-90A6-72B200E253E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.LazyRepository.Interfaces", "EFCore.LazyRepository.Interfaces\EFCore.LazyRepository.Interfaces.csproj", "{495864DD-1C61-419C-8AB5-2DB75374D8D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.LazyRepository.Samples.Web", "EFCore.LazyRepository.Samples.Web\EFCore.LazyRepository.Samples.Web.csproj", "{D80CCEDD-5BCF-4B4F-9ECF-25029105861A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{61CD9F1D-3AA9-4BB4-B6DC-D5CAE44A97A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{95709751-14B4-4B6A-AB1B-8C0E18616D22}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "Docker\docker-compose.dcproj", "{0F1CD8F3-5941-4031-A130-0F2E56AC32E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.LazyRepository.Samples.Data", "EFCore.LazyRepository.Samples.Data\EFCore.LazyRepository.Samples.Data.csproj", "{AC453FA6-DB4F-4E3D-B3FF-088FEB2D8864}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E4F2FB2-4B63-4A11-90A6-72B200E253E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E4F2FB2-4B63-4A11-90A6-72B200E253E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E4F2FB2-4B63-4A11-90A6-72B200E253E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E4F2FB2-4B63-4A11-90A6-72B200E253E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{495864DD-1C61-419C-8AB5-2DB75374D8D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{495864DD-1C61-419C-8AB5-2DB75374D8D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{495864DD-1C61-419C-8AB5-2DB75374D8D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{495864DD-1C61-419C-8AB5-2DB75374D8D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80CCEDD-5BCF-4B4F-9ECF-25029105861A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80CCEDD-5BCF-4B4F-9ECF-25029105861A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80CCEDD-5BCF-4B4F-9ECF-25029105861A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80CCEDD-5BCF-4B4F-9ECF-25029105861A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F1CD8F3-5941-4031-A130-0F2E56AC32E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1CD8F3-5941-4031-A130-0F2E56AC32E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1CD8F3-5941-4031-A130-0F2E56AC32E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F1CD8F3-5941-4031-A130-0F2E56AC32E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC453FA6-DB4F-4E3D-B3FF-088FEB2D8864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC453FA6-DB4F-4E3D-B3FF-088FEB2D8864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC453FA6-DB4F-4E3D-B3FF-088FEB2D8864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC453FA6-DB4F-4E3D-B3FF-088FEB2D8864}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D80CCEDD-5BCF-4B4F-9ECF-25029105861A} = {61CD9F1D-3AA9-4BB4-B6DC-D5CAE44A97A9}
+		{0F1CD8F3-5941-4031-A130-0F2E56AC32E2} = {95709751-14B4-4B6A-AB1B-8C0E18616D22}
+		{AC453FA6-DB4F-4E3D-B3FF-088FEB2D8864} = {61CD9F1D-3AA9-4BB4-B6DC-D5CAE44A97A9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E1BF20D-8140-4812-948B-2F1C5565D3A5}
+	EndGlobalSection
+EndGlobal
