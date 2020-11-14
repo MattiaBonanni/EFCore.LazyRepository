@@ -18,11 +18,11 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore ./src/EFCore.LazyRepository
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore ./src/EFCore.LazyRepository
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal ./src/EFCore.LazyRepository
 
   pack:
     
@@ -39,9 +39,9 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Determine version
-      run: echo "::set-env name=VERSION::$(git describe --tags --dirty)"
+      run: echo "VERSION=$(git describe --tags --dirty)" >> $GITHUB_ENV
     - name: Pack
-      run: dotnet pack --output ./artifacts --configuration Release -p:Version=$VERSION
+      run: dotnet pack --output ./artifacts --configuration Release -p:Version=$VERSION ./src/EFCore.LazyRepository
     - uses: actions/upload-artifact@v1
       with:
         name: artifacts
