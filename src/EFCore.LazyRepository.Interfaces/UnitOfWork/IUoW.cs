@@ -2,7 +2,6 @@
 using EFCore.LazyRepository.Interfaces.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace EFCore.LazyRepository.Interfaces.UnitOfWork
 {
