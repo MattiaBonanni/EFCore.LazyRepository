@@ -3,11 +3,12 @@ using EFCore.LazyRepository.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace EFCore.LazyRepository.Repositories
 {
     /// <inheritdoc cref="IRepository"/>
-    public class BaseRepository : IRepository
+    public sealed class BaseRepository : IRepository
     {
         private DbContext _context { get; set; }
 
@@ -17,19 +18,19 @@ namespace EFCore.LazyRepository.Repositories
         }
 
         /// <inheritdoc />
-        public virtual IQueryable<T> Get<T>(Func<T, bool> func = default)
+        public IQueryable<T> Get<T>(Expression<Func<T, bool>> func = default)
             where T : class, IRepositoryEntity
         {
             var dbSet = CurrentDbSet<T>().AsQueryable();
 
-            //if (func != default)
-            //    return dbSet.Where<T>(func);
+            if (func != default)
+                return dbSet.Where(func);
 
             return dbSet.AsQueryable();
         }
 
         /// <inheritdoc />
-        public virtual void Add<T>(T item)
+        public void Add<T>(T item)
             where T : class, IRepositoryEntity
         {
             var dbSet = CurrentDbSet<T>();
@@ -55,7 +56,7 @@ namespace EFCore.LazyRepository.Repositories
         }
 
         /// <inheritdoc />
-        public virtual void Update<T>(T item)
+        public void Update<T>(T item)
             where T : class, IRepositoryEntity
         {
             var dbSet = CurrentDbSet<T>();

@@ -2,7 +2,6 @@
 using EFCore.LazyRepository.Samples.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace EFCore.LazyRepository.Samples.Data.Migrations
