@@ -5,7 +5,6 @@ using EFCore.LazyRepository.Samples.Web.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace EFCore.LazyRepository.Samples.Web.Controllers
@@ -36,8 +35,7 @@ namespace EFCore.LazyRepository.Samples.Web.Controllers
         [ProducesResponseType(typeof(IEnumerable<FooBarDto>), 200)]
         public async Task<IActionResult> Get(int id)
         {
-            var entity = await _uoW.Repositories[nameof(FooBar)].Get<FooBar>()
-                                                                .Where(w => w.Id == id)
+            var entity = await _uoW.Repositories[nameof(FooBar)].Get<FooBar>(foo => foo.Id == id)
                                                                 .FirstOrDefaultAsync();
             var dto = _mapper.Map<FooBarDto>(entity);
 
@@ -62,9 +60,7 @@ namespace EFCore.LazyRepository.Samples.Web.Controllers
         [ProducesResponseType(typeof(FooBarDto), 200)]
         public async Task<IActionResult> Put([FromBody] FooBarDto dto)
         {
-            var entity = await _uoW.Repositories[nameof(FooBar)].Get<FooBar>()
-                                                                .Where(w => w.Id == dto.Id)
-                                                                .FirstOrDefaultAsync();
+            var entity = await _uoW.Repositories[nameof(FooBar)].Get<FooBar>(foo => foo.Id == dto.Id).FirstOrDefaultAsync();
 
             entity.Foo = dto.Foo;
             entity.Bar = dto.Bar;
@@ -79,7 +75,7 @@ namespace EFCore.LazyRepository.Samples.Web.Controllers
         [ProducesResponseType(typeof(bool), 200)]
         public async Task<IActionResult> Delete(int id)
         {
-            var entity = await _uoW.Repositories[nameof(FooBar)].Get<FooBar>(w => w.Id == id).FirstOrDefaultAsync();
+            var entity = await _uoW.Repositories[nameof(FooBar)].Get<FooBar>(foo => foo.Id == id) .FirstOrDefaultAsync();
 
             _uoW.Repositories[nameof(FooBar)].Remove(entity);
             await _uoW.Commit();
