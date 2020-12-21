@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>EFCore.LazyRepository</PackageId>
+    <Authors>Mattia Bonanni</Authors>
   </PropertyGroup>
 
   <ItemGroup>
